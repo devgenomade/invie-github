@@ -9,10 +9,29 @@
         img {
           max-width: 100%;
           vertical-align: top;
+          /* primero hacemos que no se muestra naturalmente ninguna imagen*/
+          display: none;
+        }
+        /*lo mismo de arriba hago que no se muestre naturalmente*/
+        img#responsive {
+          display: none;
+        }
+        /*si la resolucion es 769px o mas muestro img */
+      @media screen and (min-width: 769px) {
+        img {
+          display: block;
+        }
+      }
+      /*si la resolucion es menos o igual 768px muestro imagen responsive*/
+        @media screen and (max-width: 768px) {
+          img#responsive {
+            display: block;
+          }
         }
       </style>
   </head>
   <body>
+    <img src="./images/img-responsive.png" alt="imagen responsive del sitio" id="responsive">
     <img src="./images/header.png" alt="imagen de header">
     <img src="./images/hero.png" alt="imagen de hero">
     <img src="./images/acustica.jpg" alt="imagen de acustica">
